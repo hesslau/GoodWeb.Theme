@@ -1,0 +1,1 @@
+npm run package && scp -r $(find packaged | sort -r | head -n1) root@144.202.10.36:/var/www/html/wp-content/themes/GoodWeb.Theme.zip && ssh root@144.202.10.36 "unzip -o /var/www/html/wp-content/themes/GoodWeb.Theme.zip -d /var/www/html/wp-content/themes/GoodWeb.Theme/"

@@ -10,10 +10,24 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header>
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-	</header>
 	<div class="entry-content">
+		<?php
+
+		$postsByCategory = get_post_meta( get_the_ID(), 'cards', true );
+		if($postsByCategory != "") {
+			?>
+			<div class="grid-x grid-padding-x">
+			<?php
+			$query = new WP_Query( array( 'category_name' => $postsByCategory ) );
+			while ( $query->have_posts() ) : $query->the_post();
+				get_template_part( 'template-parts/content', get_post_format() );
+			endwhile;
+			?>
+			</div>
+			<?php
+		}
+
+		?>
 		<?php the_content(); ?>
 		<?php edit_post_link( __( '(Edit)', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
 	</div>

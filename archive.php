@@ -18,8 +18,8 @@
 get_header(); ?>
 
 <div class="main-container">
-	<div class="main-grid">
-		<main class="main-content">
+	<div class="">
+		<main class="">
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>

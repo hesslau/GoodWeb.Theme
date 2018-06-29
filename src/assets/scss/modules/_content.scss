@@ -52,3 +52,344 @@
 
   }
 }
+
+body {
+  @include breakpoint(small) {
+    padding: 1em;
+  }
+
+  @include breakpoint(medium) {
+    padding: 3em;
+  }
+  //background-color: whitesmoke;
+  background-color: #fffcfc;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+}
+
+.fullWidth {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: initial;
+}
+
+.showcase {
+  padding: 3em;
+
+  .title {
+
+  }
+}
+
+.showcase.bright {
+  color: #333;
+}
+
+.key-visual-mobile {
+  @include breakpoint(small) {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: 2px solid $light-gray;
+    margin: 1em auto;
+
+    &.face { background-image: url("http://goodweb.productions/Henrik-face.png"); }
+    &.logo { background-image: url("http://goodweb.productions/Logo.png"); }
+  }
+
+  @include breakpoint(medium) {
+    display: none;
+  }
+}
+
+.key-visual {
+  @include breakpoint(small) {
+    display: none;
+  }
+
+  @include breakpoint(medium) {
+    display: block;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    min-height: 200px;
+
+    &.face { background-image: url("http://goodweb.productions/Henrik.png"); }
+    &.logo { background-image: url("http://goodweb.productions/Logo.png"); }
+  }
+}
+
+.logo {
+  @include breakpoint(medium) {
+    background: url("http://goodweb.productions/Logo.png") bottom left no-repeat;
+  }
+}
+
+header {
+  padding-bottom: 1.5em;
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+
+  //outline: 1px solid blue;
+
+
+  .quote {
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+  }
+
+  .short-bio {
+    font-size: 1.2rem;
+    font-family: "Roboto Slab", serif;
+    font-weight: 300;
+    margin-top: 1em;
+
+    a, em, strong {
+      font-weight: bold;
+    }
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Work
+--------------------------------------------------------------*/
+#work{
+
+}
+
+#work .title-page{
+  color:#2B5BF4;
+  font-size: 3em;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+#work .entry-content-page{
+  font-weight: 300;
+  max-width: 600px;
+  font-size: 1.2em;
+  line-height: 1.55;
+  letter-spacing: normal;
+}
+
+#work .entry-content-page .buttons{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 10px;
+}
+
+#work .entry-content-page .dribbble{
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  background: #ea4c89;
+  text-decoration: none;
+  color:#fff;
+  padding:15px 20px 15px 15px;
+  border-radius: 6px;
+  justify-content: center;
+  width: 48.5%;
+}
+
+#work .entry-content-page .dribbble .icon{
+  height: 40px;
+  width: 40px;
+  background: url('./asset/image/dribbble.png') no-repeat;
+  background-size: 100%;
+  margin-right: 20px;
+}
+
+#work .entry-content-page .dribbble:hover{
+  background: #9da3a5;
+}
+
+#work .entry-content-page .github{
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  background: #4078c0;
+  text-decoration: none;
+  color:#fff;
+  padding:15px 20px 15px 15px;
+  border-radius: 6px;
+  justify-content: center;
+  width: 48%;
+}
+
+#work .entry-content-page .github .icon{
+  height: 40px;
+  width: 40px;
+  background: url('./asset/image/github.png') no-repeat;
+  background-size: cover;
+  margin-right: 20px;
+}
+
+#work .entry-content-page .github:hover{
+  background: #333;
+  color:#fff;
+}
+
+#work .posts{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  padding-bottom: 40px;
+}
+
+.work{
+  position: relative;
+  background: #f3f3f3;
+  width: 100%;
+  margin-bottom: 50px;
+  height:350px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  display: inline-block;
+}
+
+.work.hover:hover{
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: scale(0.98);
+  -moz-transform: scale(0.98);
+  -o-transform: scale(0.98);
+  transform: scale(0.98);
+  -webkit-transform-origin: center;
+  -moz-transform-origin: center;
+  -o-transform-origin: center;
+  transform-origin: center;
+}
+
+.work .image{
+  position: absolute;
+  right:0;
+  top:0;
+  width: 50%;
+  height: 100%;
+  background-size: cover !important;
+  background-position:left 20px !important;
+  opacity: 0.75;
+}
+
+.work .content{
+  position: relative;
+  display: flex !important;
+  vertical-align:middle;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 60%;
+  height: 100%;
+  padding:40px;
+}
+
+.work .content a{
+  text-decoration: none;
+  margin: 0;
+  padding:0;
+}
+
+.work .content .title{
+  position: absolute;
+  top:40px;
+  left: 40px;
+  align-self: flex-start;
+  text-decoration: none;
+  margin: 0;
+  width: 100%;
+  color:#fff;
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+.work .content .tagline{
+  align-self: center;
+  text-decoration: none;
+  margin: 0;
+  width: 100%;
+  color:#fff;
+  font-size: 2em;
+  line-height: 1.3;
+}
+
+.work .content .summary{
+  align-self: flex-end;
+  width: 100%;
+  font-size:0.95em;
+  line-height: 1.4;
+  font-weight: 300;
+  color:#fff;
+  margin: 0;
+  padding:0;
+}
+
+.work .content .meta{
+  position: absolute;
+  bottom:40px;
+  left:40px;
+  width: 100%;
+  font-size:0.95em;
+  line-height: 1.4;
+  font-weight: 300;
+  color:#fff;
+  margin: 0;
+  padding:0;
+}
+
+.work.bright .content .title,
+.work.bright .content .tagline,
+.work.bright .content .summary,
+.work.bright .content .meta {
+  color:#333;
+}
+
+.work .demo {
+  color: inherit;
+}
+
+.content .meta .field{
+  font-weight: 500;
+}
+
+@media (max-width: 700px){
+
+  #work .entry-content-page .buttons{
+    display: block;
+  }
+
+  #work .entry-content-page .dribbble{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #work .entry-content-page .github{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #work .posts .work{
+    margin-bottom: 20px;
+  }
+
+  #work .posts .work .image{
+    opacity: 0.5;
+  }
+
+  #work .posts .work .content{
+    width: 100%;
+  }
+}

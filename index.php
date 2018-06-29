@@ -15,8 +15,7 @@
 
 get_header(); ?>
 
-<div class="main-grid">
-	<main class="main-content">
+<div class="grid-x grid-padding-x">
 	<?php if ( have_posts() ) : ?>
 
 		<?php /* Start the Loop */ ?>
@@ -41,9 +40,7 @@ get_header(); ?>
 			</nav>
 		<?php endif; ?>
 
-	</main>
-	<?php get_sidebar(); ?>
-
+	<?php //get_sidebar(); ?>
 </div>
 
 <?php get_footer();

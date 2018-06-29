@@ -22,30 +22,34 @@
 		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 	<?php endif; ?>
 
+	<?php
+	$args = array(
+		'name'        => 'intro',
+		'post_type'   => 'page',
+		'post_status' => 'publish',
+		'numberposts' => 1
+	);
+	$my_posts = get_posts($args);
+	$intro_title = ( $my_posts ) ? $my_posts[0]->post_title : "";
+	$intro_content = ( $my_posts ) ? $my_posts[0]->post_content : "";
+	the_post();
+	?>
 
-	<header class="site-header" role="banner">
-		<div class="site-title-bar title-bar" <?php foundationpress_title_bar_responsive_toggle(); ?>>
-			<div class="title-bar-left">
-				<button aria-label="<?php _e( 'Main Menu', 'foundationpress' ); ?>" class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
-				<span class="site-mobile-title title-bar-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-				</span>
-			</div>
-		</div>
+    <div class="header-container">
+        <header class="site-header" role="banner">
+            <div class="grid-x grid-padding-x">
+                <div class="cell small-12 medium-7 large-7 large-offset-1">
+                    <div class="key-visual-mobile logo"></div>
+                    <?php wp_nav_menu(['menu_class'=>'align-left show-for-medium menu']); ?>
+                    <?php wp_nav_menu(['menu_class'=>'align-center show-for-small-only menu']); ?>
+                    <h1 class="quote align-right show-for-medium"><?php the_title(); ?></h1>
+                    <div class="short-bio"><?php the_excerpt(); ?></div>
+                </div>
 
-		<nav class="site-navigation top-bar" role="navigation">
-			<div class="top-bar-left">
-				<div class="site-desktop-title top-bar-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-				</div>
-			</div>
-			<div class="top-bar-right">
-				<?php foundationpress_top_bar_r(); ?>
+                <div class="cell auto">
+									<div class="key-visual logo"></div>
+								</div>
+            </div>
+        </header>
+    </div>
 
-				<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
-					<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
-				<?php endif; ?>
-			</div>
-		</nav>
-
-	</header>
